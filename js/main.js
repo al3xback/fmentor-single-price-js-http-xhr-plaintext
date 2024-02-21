@@ -31,22 +31,22 @@ const handleError = (msg) => {
 const renderCardContent = (data) => {
 	const rawData = data.split('\n');
 
-	const sectionData = [];
+	const sectionsData = [];
 	let sectionItemData = [];
 	for (let i = 0; i < rawData.length; i++) {
 		const item = rawData[i];
 		if (item === '') {
-			sectionData.push(sectionItemData);
+			sectionsData.push(sectionItemData);
 			sectionItemData = [];
 			continue;
 		}
 		sectionItemData.push(item);
 		if (i === rawData.length - 1) {
-			sectionData.push(sectionItemData);
+			sectionsData.push(sectionItemData);
 		}
 	}
 
-	const [joinCommunityData, monthlySubsriptionData, whyUsData] = sectionData;
+	const [joinCommunityData, monthlySubsriptionData, whyUsData] = sectionsData;
 	const [
 		joinCommunityTitle,
 		joinCommunitySubtitle,
